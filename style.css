@@ -296,7 +296,10 @@ nav ul li a:hover::after{
 
 .social-list img:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
+
+
 
 /* -------- CSS for Small screens -------- */
 @media only screen and (max-width: 600px){
