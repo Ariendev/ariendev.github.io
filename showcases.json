@@ -1,20 +1,12 @@
 {
   "images": [
     {
-      "url": "images/showcase/1.jpg",
-      "description": "Description 1"
+      "url": "images/showcase/1.webp",
+      "description": "2020 - Cataplorers, Gameplay Programming"
     },
     {
-      "url": "images/showcase/2.jpg",
-      "description": "Description 2"
-    },
-    {
-      "url": "images/showcase/3.jpg",
-      "description": "Description 3"
-    },
-    {
-        "url": "images/showcase/4.jpg",
-        "description": "Description 4"
+      "url": "images/showcase/Base_Camp.png",
+      "description": "2021 - Blessed, Shaders & Environment"
     }
   ]
 }
