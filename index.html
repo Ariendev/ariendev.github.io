@@ -79,19 +79,8 @@
     <div id="portfolio">
         <div class="container">
             <h1 class="title">My Work</h1>
-            <div class="showcase-list">
-                <div class="showcase">
-                    <img src="images/20220621_134601.jpg">
-                    <p>2022 - Backyard, baby bro Eli</p>
-                </div>
-                <div class="showcase">
-                    <img src="images/20220621_134558.jpg">
-                    <p>2022 - Backyard, baby bro Eli</p>
-                </div>
-                <div class="showcase">
-                    <img src="images/20220621_134605.jpg">
-                    <p>2022 - Backyard, baby bro Eli</p>
-                </div>
+            <div class="showcase-list" id="showcase-container">
+
             </div>
         </div>
     </div>
@@ -114,5 +103,47 @@
             document.getElementById(tab).classList.add("active-tab");
         }
     </script>
+
+    <script>
+        // Get the reference to the showcase container element
+        var showcaseContainer = document.getElementById("showcase-container");
+
+        // Load the JSON file containing the image URLs and descriptions
+        fetch('showcases.json')
+        .then(response => response.json())
+        .then(data => {
+            // Iterate over the images data and create image containers
+            data.images.forEach(imageData => {
+            // Create a new image element
+            const image = document.createElement("img");
+
+            // Set the source of the image
+            image.src = imageData.url;
+
+            // Create a new div element for the image container
+            const imageContainer = document.createElement("div");
+
+            // Add the "showcase" class to the image container
+            imageContainer.classList.add("showcase");
+
+            // Append the image to the image container
+            imageContainer.appendChild(image);
+
+            // Create a new paragraph element for the description
+            const description = document.createElement("p");
+
+            // Set the description text
+            description.textContent = imageData.description;
+
+            // Append the description to the image container
+            imageContainer.appendChild(description);
+
+            // Append the image container to the showcase container
+            showcaseContainer.appendChild(imageContainer);
+            });
+        });
+
+    </script>
+    
 </body>
 </html>

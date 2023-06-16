@@ -237,7 +237,7 @@ nav ul li a:hover::after{
 
 .showcase-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 40px;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -253,21 +253,22 @@ nav ul li a:hover::after{
 .showcase img{
     width: 100%;
     border-radius: 25px;
-    margin-bottom: 15px;
     display: block;
     transition: 0.5s;
 }
 
 .showcase:hover{
-    transform: scale(1.15);
+    transform: scale(1.05);
     z-index: 5;
 }
 
 .showcase img:hover{
     border-radius: 5px;
+    transform: scale(1.05);
 }
 
 .showcase p{
+    margin-top: 5%;
     text-align: center;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 900;
