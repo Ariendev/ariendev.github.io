@@ -21,6 +21,10 @@ html{
     background-size: cover;
 }
 
+#invisible{
+    opacity: 0;
+}
+
 .top-bar{
     padding: 10px 10%;
     background-color: #1a181b;    
@@ -224,6 +228,49 @@ nav ul li a:hover::after{
     transform: scale(1.05);
     border-radius:  5px;
 
+}
+
+
+#portfolio{
+    padding: 25px 0;
+}
+
+.showcase-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.showcase {
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.showcase img{
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    display: block;
+    transition: 0.5s;
+}
+
+.showcase:hover{
+    transform: scale(1.15);
+    z-index: 5;
+}
+
+.showcase img:hover{
+    border-radius: 5px;
+}
+
+.showcase p{
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
 }
 
 /* -------- CSS for Small screens -------- */
