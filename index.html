@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arien's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="top-bar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- -------- Intro Text -------- -->
+
+        <div class="introduction-text">
+            <p>Technical Artist  |  Game Programmer</p>
+            <h1>Hello, My name is <a href="https://twitter.com/arienmakesgames"><img src="images/logo.png" class="logo"></a> <br> <span id="header-break">I make cool stuff!</span> </h1>
+        </div>
+    </div>
+
+    <!-- -------- About Me -------- -->
+
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <h1 class="title">About Me</h1>
+                    <p class="description">
+                        Greetings! I am Allen Velazco or 'Arien', a passionate and versatile technical artist and game developer. I come from a blend of Filipino and Swedish roots.
+                        <br> <br> At 19 years old (2004), I'm deeply passionate about both art and game programming. My skill set encompasses a wide range of expertise, including shader programming, VFX, environment art and gameplay programming.
+                        I'm proud to have the ability to be able to seamlessly integrate both artistic and technical elements of game development.
+                        <br> In the 4 years I've done game development, I've had the pleasure of conributing to a few small indie games such as: 
+                        <br> <span class="game-name">Cataplorers</span>, where I did most of the gameplay mechanics.
+                        <br> <span class="game-name">Blessed</span>, where I made all the shaders and VFX.
+                        <br> <span class="game-name">High Command</span>, where I created custom PBR shaders, VFX and contributed to environment and level design.  
+                    </p>
+
+                    <div class="tab-titles">
+                        <div class="tab-link" onclick="opentab('skills')">Skills</div>
+                        <div class="tab-link active-link" onclick="opentab('education')">Education</div>
+                    </div>
+
+                    <!-- -------- Skills -------- -->
+
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Shader Creation</span><br>Fluent in Cg, Intermediate in GLSL HLSL</li>
+                            <li><span>VFX</span><br>Intermediate knowledge in stylized and realistic VFX creation</li>
+                            <li><span>Environment Art</span><br>Beginner knowledge in level art and composition</li>
+                            <li><span>Gameplay Programming</span><br>Fluent in C#, Capable of making complex game mechanics</li>
+                        </ul>
+                    </div>
+
+                    <!-- -------- Education -------- -->
+
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>LBS Kreativa Gymnasiet</span><br>2020 - 2023 | GameDevelopment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-col-2">
+                    <img src="images/IMG_3867.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-link");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tab){
+            
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tab).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+body{
+    background: #252226;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    height:  100vh;
+    background-image: url(images/bg.png);
+    background-size: cover;
+}
+
+.top-bar{
+    padding: 10px 10%;
+    background-color: #1a181b;    
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.container{
+    padding: 10px 10%;
+    background-color: #1a181b;
+}
+
+nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.logo{
+    width: 500px;
+    transition: 0.25s;
+}
+
+.logo:hover{
+    transform: scale(1.05);
+}
+
+nav ul li{
+    display:  inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #e2fdef;
+    text-decoration:  none;
+    font-size: 20px;
+    font-family: "Lemon Milk Light";
+    src: url(fonts/LEMONMILK-Light.otf);
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 100%;
+    height: 0px;
+    background: #bb00ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.25s;
+}
+
+nav ul li a:hover::after{
+    height: 3px;
+    transform: scale(1.1);
+}
+
+.introduction-text{
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 30px;
+    user-select: none;
+}
+
+.introduction-text p{
+    font-family: "Coolvetica";
+    src: url(fonts/coolvetica-condensed.otf);
+    
+}
+
+.introduction-text h1{
+    color: #e2fdef;
+    font-size: 120px;
+    margin-top: -15px;
+    font-family: "Coolvetica";
+    font-weight: 300;
+    font-stretch: 25%;
+    
+}
+
+#header-break{
+    font-family: "Coolvetica";
+    font-size: 90px;
+}
+
+/* -------- About Me -------- */
+
+#about{
+    padding: 80px 0;
+    color: #262029
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 60%;
+    margin: 60px 0;
+}
+
+.about-col-1 h1{
+    user-select: none;
+}
+
+.title{
+    font-size: 80px;
+    font-weight: 600;
+    font-family: "Lemon Milk Light";
+    color: #e2fdef;
+}
+
+.description{
+    margin-top: 5%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: "Coolvetica";
+}
+
+.game-name{
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-family: "Coolvetica";
+    color: #e2fdef;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 40px 25% 40px;
+    
+}
+
+.tab-link{
+    margin-right: 50px;
+    font-family: "Lemon Milk";
+    letter-spacing: 5px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.tab-link::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #bb00ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.25s;
+    
+}
+
+.tab-link.active-link::after{
+    width: 100%;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display:flex;
+}
+
+.tab-contents ul li{
+    list-style:circle;
+    margin: 20px 0;
+    color: #cecece;
+    font-family: "Coolvetica";
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.tab-contents ul li span{
+    font-family: "Coolvetica";
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #bb00ff;
+}
+
+.about-col-2{
+    flex-basis: 35%;
+    margin: 60px 0;
+}
+
+.about-col-2 img{
+    width: 100%;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.about-col-2 img:hover{
+    transform: scale(1.05);
+    border-radius:  5px;
+
+}
+
+/* -------- CSS for Small screens -------- */
+@media only screen and (max-width: 600px){
+
+    #header{
+        background-image: url(images/bg-small.png);
+        background-position: right;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        height: 50vh;    
+    }
+
+    .top-bar{
+        display: none;
+    }
+
+    .introduction-text p{
+        font-size: 12px;
+        margin-bottom: 20px;
+        font-weight: 100;
+    }
+
+    .introduction-text h1{
+        font-size: 40px;
+    }
+
+    .introduction-text h1 img{
+        width: 200px;
+    }
+
+    #header-break{
+        display: none;
+    }
+
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-2 img{
+        display: none;
+    }
+
+    .title{
+        font-size: 45px;
+        font-weight: bolder;
+    }
+
+    .description{
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .game-name{
+        font-size: 18px;
+    }
+
+    .tab-titles{
+        margin: 25px 5px 10px;
+    }
+
+    .tab-link{
+        font-size: 12px;
+        margin-right: 15px;
+    }
+}
+
