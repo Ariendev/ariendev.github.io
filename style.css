@@ -19,6 +19,7 @@ html{
     height:  100vh;
     background-image: url(images/bg.png);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #invisible{
@@ -30,6 +31,7 @@ html{
     background-color: #1a181b;    
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    overflow-y: scroll;
 }
 
 .container{
