@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cf7gf57arffgu"]
+[gd_scene load_steps=11 format=3 uid="uid://ittpstdne2ly"]
 
 [ext_resource type="Shader" path="res://scroll.gdshader" id="1_afdya"]
 [ext_resource type="Texture2D" uid="uid://dn3e3uargc3su" path="res://curtain-tex.png" id="2_4qnp2"]
-[ext_resource type="Texture2D" uid="uid://bnd1ud1h4hsll" path="res://noise.tres" id="2_w2kl7"]
+[ext_resource type="Texture2D" uid="uid://bhvi8oybrbyli" path="res://noise.tres" id="2_w2kl7"]
 [ext_resource type="Shader" path="res://warp.gdshader" id="4_njgsj"]
 [ext_resource type="Texture2D" uid="uid://ceefb2bjp0adq" path="res://name.png" id="5_qypy2"]
 
