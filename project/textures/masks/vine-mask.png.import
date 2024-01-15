@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n23x55i3txma"
-path="res://.godot/imported/Perlin 9 - 512x512.png-0904c461691bcf22340cc2548c918b5a.ctex"
+uid="uid://bweedphpel0gk"
+path="res://.godot/imported/vine-mask.png-903c2063802a1f3a8fbebff1088060ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Perlin 9 - 512x512.png"
-dest_files=["res://.godot/imported/Perlin 9 - 512x512.png-0904c461691bcf22340cc2548c918b5a.ctex"]
+source_file="res://textures/masks/vine-mask.png"
+dest_files=["res://.godot/imported/vine-mask.png-903c2063802a1f3a8fbebff1088060ea.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dge4q3n8ycbec"
-path="res://.godot/imported/wires-mask.png-77208f205a776ac9cf0fd7e12d856212.ctex"
+uid="uid://duuixy6pogv1j"
+path="res://.godot/imported/shine.png-10c92d24c3e9f6482c9e3f95465a3599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wires-mask.png"
-dest_files=["res://.godot/imported/wires-mask.png-77208f205a776ac9cf0fd7e12d856212.ctex"]
+source_file="res://textures/shine.png"
+dest_files=["res://.godot/imported/shine.png-10c92d24c3e9f6482c9e3f95465a3599.ctex"]
 
 [params]
 

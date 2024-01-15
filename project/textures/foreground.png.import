@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bweedphpel0gk"
-path="res://.godot/imported/vine-mask.png-91674eb78e471347e5319be631a4b317.ctex"
+uid="uid://dbiqsfnlxgv6x"
+path="res://.godot/imported/foreground.png-664c4a9d37c7e7558e6edeee43fe3e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vine-mask.png"
-dest_files=["res://.godot/imported/vine-mask.png-91674eb78e471347e5319be631a4b317.ctex"]
+source_file="res://textures/foreground.png"
+dest_files=["res://.godot/imported/foreground.png-664c4a9d37c7e7558e6edeee43fe3e57.ctex"]
 
 [params]
 

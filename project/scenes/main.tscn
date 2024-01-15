@@ -1,31 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://oahqkwqj24wb"]
+[gd_scene load_steps=11 format=3 uid="uid://oahqkwqj24wb"]
 
-[ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://foreground.png" id="1_kna36"]
-[ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://wires.png" id="2_51ft0"]
-[ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://shine.png" id="5_owjcf"]
-[ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://vine.png" id="6_lwluu"]
-[ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://VCR_OSD_MONO_1.001.ttf" id="8_1573y"]
-[ext_resource type="Texture2D" uid="uid://cr1lrdf428gpo" path="res://light.png" id="9_d4qhj"]
-
-[sub_resource type="Animation" id="Animation_unan7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(24, 12)]
-}
+[ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://textures/wires.png" id="1_e5eyt"]
+[ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://textures/foreground.png" id="2_4gie4"]
+[ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://textures/shine.png" id="3_vfs0r"]
+[ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://textures/vine.png" id="4_mk0p0"]
+[ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="5_qeuo8"]
+[ext_resource type="Texture2D" uid="uid://cr1lrdf428gpo" path="res://textures/light.png" id="6_x4y8i"]
 
 [sub_resource type="Animation" id="Animation_j3evf"]
 resource_name = "sway"
 length = 4.80001
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -41,14 +26,13 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ub1x4"]
 _data = {
-"RESET": SubResource("Animation_unan7"),
 "sway": SubResource("Animation_j3evf")
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8ntg6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tepne"]
-font = ExtResource("8_1573y")
+font = ExtResource("5_qeuo8")
 font_size = 12
 
 [node name="Scene" type="Node2D"]
@@ -68,15 +52,15 @@ texture_filter = 1
 texture_repeat = 1
 position = Vector2(258, 180)
 scale = Vector2(6, 6)
-texture = ExtResource("2_51ft0")
+texture = ExtResource("1_e5eyt")
 region_enabled = true
 region_rect = Rect2(-8, -8, 80, 80)
 
 [node name="Top Screen" type="Sprite2D" parent="."]
-position = Vector2(24, 12)
+position = Vector2(321, 12)
 rotation = 0.0174533
 scale = Vector2(6, 6)
-texture = ExtResource("1_kna36")
+texture = ExtResource("2_4gie4")
 centered = false
 offset = Vector2(-48.815, 0)
 region_enabled = true
@@ -89,7 +73,7 @@ libraries = {
 autoplay = "sway"
 
 [node name="Shine" type="Sprite2D" parent="Top Screen"]
-texture = ExtResource("5_owjcf")
+texture = ExtResource("3_vfs0r")
 centered = false
 offset = Vector2(-48.815, 0)
 region_enabled = true
@@ -98,13 +82,13 @@ region_rect = Rect2(4, 2, 99, 35)
 [node name="Main Screen" type="Sprite2D" parent="."]
 position = Vector2(450, 234)
 scale = Vector2(6, 6)
-texture = ExtResource("1_kna36")
+texture = ExtResource("2_4gie4")
 centered = false
 region_enabled = true
 region_rect = Rect2(75, 39, 152, 94)
 
 [node name="Main Screen2" type="Sprite2D" parent="Main Screen"]
-texture = ExtResource("5_owjcf")
+texture = ExtResource("3_vfs0r")
 centered = false
 region_enabled = true
 region_rect = Rect2(75, 39, 152, 94)
@@ -112,7 +96,7 @@ region_rect = Rect2(75, 39, 152, 94)
 [node name="Vine" type="Sprite2D" parent="Main Screen"]
 texture_repeat = 1
 position = Vector2(-10.5, -6.66665)
-texture = ExtResource("6_lwluu")
+texture = ExtResource("4_mk0p0")
 centered = false
 region_enabled = true
 region_rect = Rect2(-1, -1, 62, 45)
@@ -148,4 +132,4 @@ justification_flags = 130
 [node name="Light" type="Sprite2D" parent="."]
 position = Vector2(720, 405)
 scale = Vector2(6, 6)
-texture = ExtResource("9_d4qhj")
+texture = ExtResource("6_x4y8i")

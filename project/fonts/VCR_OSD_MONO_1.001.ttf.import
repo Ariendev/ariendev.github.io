@@ -2,18 +2,18 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cwxh16dh0ttda"
-path="res://.godot/imported/Daydream.ttf-11c6c2082dd03a4214157b529c762bc7.fontdata"
+uid="uid://qj3svafpklro"
+path="res://.godot/imported/VCR_OSD_MONO_1.001.ttf-92b798ad9789991a513c2da11fbc8ed7.fontdata"
 
 [deps]
 
-source_file="res://Daydream.ttf"
-dest_files=["res://.godot/imported/Daydream.ttf-11c6c2082dd03a4214157b529c762bc7.fontdata"]
+source_file="res://fonts/VCR_OSD_MONO_1.001.ttf"
+dest_files=["res://.godot/imported/VCR_OSD_MONO_1.001.ttf-92b798ad9789991a513c2da11fbc8ed7.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
@@ -27,7 +27,12 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
 language_support={}
 script_support={}
 opentype_features={}

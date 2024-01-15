@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbiqsfnlxgv6x"
-path="res://.godot/imported/foreground.png-2f01737783171ba7340b48a5028ba5e9.ctex"
+uid="uid://duwmcuvdwe68o"
+path="res://.godot/imported/wires.png-7ae04f0cb1297bfe43e33b08f36c6bad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://foreground.png"
-dest_files=["res://.godot/imported/foreground.png-2f01737783171ba7340b48a5028ba5e9.ctex"]
+source_file="res://textures/wires.png"
+dest_files=["res://.godot/imported/wires.png-7ae04f0cb1297bfe43e33b08f36c6bad.ctex"]
 
 [params]
 

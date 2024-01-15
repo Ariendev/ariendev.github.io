@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duuixy6pogv1j"
-path="res://.godot/imported/shine.png-a8253c1d2dc8acbf187823f695c13207.ctex"
+uid="uid://bhk3yhnbe845k"
+path="res://.godot/imported/Streak 12 - 512x512.png-32b1f509797aca1da9b4dafc61e27ac7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shine.png"
-dest_files=["res://.godot/imported/shine.png-a8253c1d2dc8acbf187823f695c13207.ctex"]
+source_file="res://textures/noise/Streak 12 - 512x512.png"
+dest_files=["res://.godot/imported/Streak 12 - 512x512.png-32b1f509797aca1da9b4dafc61e27ac7.ctex"]
 
 [params]
 
