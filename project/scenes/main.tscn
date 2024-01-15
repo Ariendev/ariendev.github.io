@@ -62,7 +62,6 @@ material = SubResource("ShaderMaterial_gtopc")
 position = Vector2(258, 180)
 scale = Vector2(6, 6)
 texture = ExtResource("1_e5eyt")
-region_enabled = true
 region_rect = Rect2(-8, -8, 80, 80)
 
 [node name="Top Screen" type="Sprite2D" parent="."]
