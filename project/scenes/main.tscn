@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://oahqkwqj24wb"]
+[gd_scene load_steps=15 format=3 uid="uid://oahqkwqj24wb"]
 
 [ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://textures/wires.png" id="1_e5eyt"]
 [ext_resource type="Shader" path="res://shaders/wire.gdshader" id="1_yejeb"]
@@ -33,13 +33,48 @@ _data = {
 "sway": SubResource("Animation_j3evf")
 }
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8ntg6"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_tepne"]
 line_spacing = 2.0
 font = ExtResource("5_qeuo8")
 font_size = 12
 font_color = Color(0.737255, 1, 0.905882, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8ntg6"]
+
+[sub_resource type="Animation" id="Animation_y84le"]
+resource_name = "sway"
+length = 2.00001
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(720, 0), Vector2(726, 0), Vector2(720, 0), Vector2(714, 0), Vector2(720, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.166767, 0.25, 0.833333, 0.916767, 1, 1.08343, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6d7c"]
+_data = {
+"sway": SubResource("Animation_y84le")
+}
 
 [node name="Scene" type="Node2D"]
 
@@ -47,8 +82,7 @@ font_color = Color(0.737255, 1, 0.905882, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_right = 1442.0
+offset_right = 1440.0
 offset_bottom = 810.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -108,13 +142,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2(-1, -1, 62, 45)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Main Screen"]
-visible = false
-modulate = Color(0, 0, 0, 0.431373)
-position = Vector2(43.5, 28.5)
-scale = Vector2(240, 135)
-texture = SubResource("CanvasTexture_8ntg6")
-
 [node name="Label" type="Label" parent="Main Screen"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -135,8 +162,21 @@ label_settings = SubResource("LabelSettings_tepne")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Darken" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.431373)
+position = Vector2(711, 405)
+scale = Vector2(1440, 810)
+texture = SubResource("CanvasTexture_8ntg6")
+
 [node name="Light" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(720, 405)
+position = Vector2(726, 0)
 scale = Vector2(6, 6)
 texture = ExtResource("6_x4y8i")
+offset = Vector2(0, 67)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
+libraries = {
+"": SubResource("AnimationLibrary_g6d7c")
+}
+autoplay = "sway"
+speed_scale = 0.5
