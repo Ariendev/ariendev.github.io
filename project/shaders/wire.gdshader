@@ -1,18 +1,11 @@
 shader_type canvas_item;
-uniform sampler2D noise_tex : hint_default_black, repeat_enable;
 
-const float RES = 66.0;
-const float SPEED = 1.0;
-const float DISP = 0.05;
-//const float FPS = 12.0;
 void fragment() {
-	vec2 pixelated = floor(UV * RES) / RES;
-	
-	vec2 noise_uv = pixelated + (TIME * SPEED);
-	float noise = texture(noise_tex, noise_uv).r;
-	COLOR = vec4(noise, noise , noise, 1.0);
-	noise = pow(noise, 1.5) * 2.0 - 1.0;
-	
-	//vec2 final_uv = pixelated + noise * DISP;
-	//vec4 final = texture(TEXTURE, final_uv);
+	vec2 res = vec2(75.0, 66.0);
+	float fps = floor(TIME * 12.0) / 12.0;
+	vec2 pixelated = floor(UV * res) / res;
+	float sway_mask = clamp(pow(pixelated.y, 4.0), 0.0, 1.0);
+	vec2 uv = (pixelated - vec2(cos(fps) * sway_mask * 0.1, 0.0));
+	COLOR = texture(TEXTURE, uv);
+	//COLOR.rgb = vec3(clamp(pow(pixelated.y, 3.0), 0.0, 1.0));
 }

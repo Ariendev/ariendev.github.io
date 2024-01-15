@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://oahqkwqj24wb"]
+[gd_scene load_steps=13 format=3 uid="uid://oahqkwqj24wb"]
 
 [ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://textures/wires.png" id="1_e5eyt"]
 [ext_resource type="Shader" path="res://shaders/wire.gdshader" id="1_yejeb"]
 [ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://textures/foreground.png" id="2_4gie4"]
-[ext_resource type="Texture2D" uid="uid://cy5hsmq312x3s" path="res://textures/noise/simplex.tres" id="2_exnxh"]
 [ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://textures/shine.png" id="3_vfs0r"]
 [ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://textures/vine.png" id="4_mk0p0"]
 [ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="5_qeuo8"]
@@ -11,7 +10,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtopc"]
 shader = ExtResource("1_yejeb")
-shader_parameter/noise_tex = ExtResource("2_exnxh")
 
 [sub_resource type="Animation" id="Animation_j3evf"]
 resource_name = "sway"
@@ -49,7 +47,8 @@ font_color = Color(0.737255, 1, 0.905882, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1440.0
+offset_left = 2.0
+offset_right = 1442.0
 offset_bottom = 810.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -59,14 +58,14 @@ color = Color(0, 0, 0, 1)
 texture_filter = 1
 texture_repeat = 1
 material = SubResource("ShaderMaterial_gtopc")
-position = Vector2(258, 180)
+position = Vector2(0, -12)
 scale = Vector2(6, 6)
 texture = ExtResource("1_e5eyt")
+centered = false
 region_rect = Rect2(-8, -8, 80, 80)
 
 [node name="Top Screen" type="Sprite2D" parent="."]
-position = Vector2(324, 12)
-rotation = 0.0174533
+position = Vector2(321, 12)
 scale = Vector2(6, 6)
 texture = ExtResource("2_4gie4")
 centered = false
