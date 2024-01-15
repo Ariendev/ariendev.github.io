@@ -11,9 +11,9 @@ void fragment() {
 	
 	vec2 noise_uv = (pixelated * SCALE) + (TIME * SPEED);
 	float noise = texture(noise_tex, noise_uv).r;
+	COLOR = vec4(noise);
 	noise = pow(noise, 1.5) * 2.0 - 1.0;
 	
-	vec2 final_uv = pixelated + noise * DISP;
-	vec4 final = texture(TEXTURE, final_uv);
-	COLOR = final;
+	//vec2 final_uv = pixelated + noise * DISP;
+	//vec4 final = texture(TEXTURE, final_uv);
 }
