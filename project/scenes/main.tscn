@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://textures/wires.png" id="1_e5eyt"]
 [ext_resource type="Shader" path="res://shaders/wire.gdshader" id="1_yejeb"]
 [ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://textures/foreground.png" id="2_4gie4"]
-[ext_resource type="Texture2D" uid="uid://n23x55i3txma" path="res://textures/noise/Perlin 9 - 512x512.png" id="2_7auqd"]
+[ext_resource type="Texture2D" uid="uid://cy5hsmq312x3s" path="res://textures/noise/simplex.tres" id="2_exnxh"]
 [ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://textures/shine.png" id="3_vfs0r"]
 [ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://textures/vine.png" id="4_mk0p0"]
 [ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="5_qeuo8"]
@@ -11,7 +11,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtopc"]
 shader = ExtResource("1_yejeb")
-shader_parameter/noise_tex = ExtResource("2_7auqd")
+shader_parameter/noise_tex = ExtResource("2_exnxh")
 
 [sub_resource type="Animation" id="Animation_j3evf"]
 resource_name = "sway"
