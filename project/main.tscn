@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://oahqkwqj24wb"]
+[gd_scene load_steps=12 format=3 uid="uid://oahqkwqj24wb"]
 
 [ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://foreground.png" id="1_kna36"]
-[ext_resource type="Material" uid="uid://ca02daal4bnbu" path="res://wire.tres" id="1_muakc"]
 [ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://wires.png" id="2_51ft0"]
-[ext_resource type="Material" uid="uid://b4brrgbcio4ea" path="res://vines.tres" id="5_noxa3"]
 [ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://shine.png" id="5_owjcf"]
 [ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://vine.png" id="6_lwluu"]
 [ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://VCR_OSD_MONO_1.001.ttf" id="8_1573y"]
@@ -68,7 +66,6 @@ color = Color(0, 0, 0, 1)
 [node name="Wires" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-material = ExtResource("1_muakc")
 position = Vector2(258, 180)
 scale = Vector2(6, 6)
 texture = ExtResource("2_51ft0")
@@ -114,7 +111,6 @@ region_rect = Rect2(75, 39, 152, 94)
 
 [node name="Vine" type="Sprite2D" parent="Main Screen"]
 texture_repeat = 1
-material = ExtResource("5_noxa3")
 position = Vector2(-10.5, -6.66665)
 texture = ExtResource("6_lwluu")
 centered = false
