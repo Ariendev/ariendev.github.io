@@ -1,78 +1,175 @@
-[gd_scene load_steps=11 format=3 uid="uid://ittpstdne2ly"]
+[gd_scene load_steps=17 format=3 uid="uid://oahqkwqj24wb"]
 
-[ext_resource type="Shader" path="res://scroll.gdshader" id="1_afdya"]
-[ext_resource type="Texture2D" uid="uid://dn3e3uargc3su" path="res://curtain-tex.png" id="2_4qnp2"]
-[ext_resource type="Texture2D" uid="uid://bhvi8oybrbyli" path="res://noise.tres" id="2_w2kl7"]
-[ext_resource type="Shader" path="res://warp.gdshader" id="4_njgsj"]
-[ext_resource type="Texture2D" uid="uid://ceefb2bjp0adq" path="res://name.png" id="5_qypy2"]
+[ext_resource type="Texture2D" uid="uid://dbiqsfnlxgv6x" path="res://foreground.png" id="1_kna36"]
+[ext_resource type="Texture2D" uid="uid://duwmcuvdwe68o" path="res://wires.png" id="2_51ft0"]
+[ext_resource type="Shader" path="res://wire.gdshader" id="2_wlbsd"]
+[ext_resource type="Texture2D" uid="uid://n23x55i3txma" path="res://Perlin 9 - 512x512.png" id="3_0wvbs"]
+[ext_resource type="Texture2D" uid="uid://duuixy6pogv1j" path="res://shine.png" id="5_owjcf"]
+[ext_resource type="Texture2D" uid="uid://bweedphpel0gk" path="res://vine-mask.png" id="6_goklt"]
+[ext_resource type="Texture2D" uid="uid://cph8hkwi4cpim" path="res://vine.png" id="6_lwluu"]
+[ext_resource type="FontFile" uid="uid://qj3svafpklro" path="res://VCR_OSD_MONO_1.001.ttf" id="8_1573y"]
+[ext_resource type="Texture2D" uid="uid://cr1lrdf428gpo" path="res://light.png" id="9_d4qhj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qqna"]
-shader = ExtResource("1_afdya")
-shader_parameter/scrollDireciton = Vector2(0.1, 0.1)
-shader_parameter/textureRes = Vector2(480, 270)
-shader_parameter/uvSnap = 0.5
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8njq"]
+shader = ExtResource("2_wlbsd")
+shader_parameter/noise_scale = 0.25
+shader_parameter/res = Vector2(66, 66)
+shader_parameter/dir = Vector2(0.2, 0)
+shader_parameter/dis = Vector2(0.075, -0.025)
+shader_parameter/fps = 24.0
+shader_parameter/noise_tex = ExtResource("3_0wvbs")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eudgi"]
-shader = ExtResource("1_afdya")
-shader_parameter/scrollDireciton = Vector2(-0.25, 0)
-shader_parameter/textureRes = Vector2(16, 32)
-shader_parameter/uvSnap = 0.0
+[sub_resource type="Animation" id="Animation_unan7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 12)]
+}
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_0h4po"]
-frequency = 0.0708
-fractal_octaves = 1
+[sub_resource type="Animation" id="Animation_j3evf"]
+resource_name = "sway"
+length = 4.80001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.7, 2.4, 3, 3.6, 4.2, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(321, 12), Vector2(318, 12), Vector2(315, 12), Vector2(318, 12), Vector2(321, 12), Vector2(324, 12), Vector2(327, 12), Vector2(324, 12), Vector2(321, 12)]
+}
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y7ibb"]
-width = 32
-height = 32
-generate_mipmaps = false
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_0h4po")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ub1x4"]
+_data = {
+"RESET": SubResource("Animation_unan7"),
+"sway": SubResource("Animation_j3evf")
+}
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocxo0"]
-shader = ExtResource("4_njgsj")
-shader_parameter/warpAmount = 0.03
-shader_parameter/scrollDirection = Vector2(0.1, 0.1)
-shader_parameter/res = Vector2(189, 66)
-shader_parameter/noiseTex = SubResource("NoiseTexture2D_y7ibb")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4r23"]
+shader = ExtResource("2_wlbsd")
+shader_parameter/noise_scale = 0.6
+shader_parameter/res = Vector2(60, 43)
+shader_parameter/dir = Vector2(0.1, 0.1)
+shader_parameter/dis = Vector2(0.05, 0.05)
+shader_parameter/fps = 24.0
+shader_parameter/noise_tex = ExtResource("3_0wvbs")
+shader_parameter/noise_mask = ExtResource("6_goklt")
 
-[node name="Main" type="Node2D"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_8ntg6"]
 
-[node name="NoiseBG" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_1qqna")
-texture = ExtResource("2_w2kl7")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 480, 270)
+[sub_resource type="LabelSettings" id="LabelSettings_tepne"]
+font = ExtResource("8_1573y")
+font_size = 12
 
-[node name="Curtains" type="Node2D" parent="."]
+[node name="Scene" type="Node2D"]
 
-[node name="Curtain Top" type="Sprite2D" parent="Curtains"]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1440.0
+offset_bottom = 810.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Wires" type="Sprite2D" parent="."]
 texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_eudgi")
-texture = ExtResource("2_4qnp2")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 480, 64)
-
-[node name="Curtain Bottom" type="Sprite2D" parent="Curtains"]
-texture_filter = 1
-texture_repeat = 2
-material = SubResource("ShaderMaterial_eudgi")
-position = Vector2(0, 206)
-texture = ExtResource("2_4qnp2")
-centered = false
-flip_h = true
-flip_v = true
-region_enabled = true
-region_rect = Rect2(0, 0, 480, 64)
-
-[node name="Name" type="Sprite2D" parent="."]
 texture_repeat = 1
-material = SubResource("ShaderMaterial_ocxo0")
-position = Vector2(240, 135)
-texture = ExtResource("5_qypy2")
+material = SubResource("ShaderMaterial_t8njq")
+position = Vector2(258, 180)
+scale = Vector2(6, 6)
+texture = ExtResource("2_51ft0")
 region_enabled = true
-region_rect = Rect2(-12, -12, 189, 66)
+region_rect = Rect2(-8, -8, 80, 80)
+
+[node name="Top Screen" type="Sprite2D" parent="."]
+position = Vector2(24, 12)
+rotation = 0.0174533
+scale = Vector2(6, 6)
+texture = ExtResource("1_kna36")
+centered = false
+offset = Vector2(-48.815, 0)
+region_enabled = true
+region_rect = Rect2(4, 2, 99, 35)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Top Screen"]
+libraries = {
+"": SubResource("AnimationLibrary_ub1x4")
+}
+autoplay = "sway"
+
+[node name="Shine" type="Sprite2D" parent="Top Screen"]
+texture = ExtResource("5_owjcf")
+centered = false
+offset = Vector2(-48.815, 0)
+region_enabled = true
+region_rect = Rect2(4, 2, 99, 35)
+
+[node name="Main Screen" type="Sprite2D" parent="."]
+position = Vector2(450, 234)
+scale = Vector2(6, 6)
+texture = ExtResource("1_kna36")
+centered = false
+region_enabled = true
+region_rect = Rect2(75, 39, 152, 94)
+
+[node name="Main Screen2" type="Sprite2D" parent="Main Screen"]
+texture = ExtResource("5_owjcf")
+centered = false
+region_enabled = true
+region_rect = Rect2(75, 39, 152, 94)
+
+[node name="Vine" type="Sprite2D" parent="Main Screen"]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_c4r23")
+position = Vector2(-11, -6.99998)
+texture = ExtResource("6_lwluu")
+centered = false
+region_enabled = true
+region_rect = Rect2(-1, -1, 62, 45)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Main Screen"]
+modulate = Color(0, 0, 0, 0.431373)
+position = Vector2(43.5, 28.5)
+scale = Vector2(240, 135)
+texture = SubResource("CanvasTexture_8ntg6")
+
+[node name="Label" type="Label" parent="Main Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.8333
+offset_top = -15.6667
+offset_right = 53.1667
+offset_bottom = 9.33333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0174533
+size_flags_horizontal = 4
+text = "Website update 
+coming soon!"
+label_settings = SubResource("LabelSettings_tepne")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+justification_flags = 130
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(720, 405)
+scale = Vector2(6, 6)
+texture = ExtResource("9_d4qhj")

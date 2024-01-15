@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn3e3uargc3su"
-path="res://.godot/imported/curtain-tex.png-19dfc74e33ee41998ac2037aa85b2e40.ctex"
+uid="uid://bhk3yhnbe845k"
+path="res://.godot/imported/Streak 12 - 512x512.png-24676a64590c5cbb42bc04232cb8a0c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://curtain-tex.png"
-dest_files=["res://.godot/imported/curtain-tex.png-19dfc74e33ee41998ac2037aa85b2e40.ctex"]
+source_file="res://Streak 12 - 512x512.png"
+dest_files=["res://.godot/imported/Streak 12 - 512x512.png-24676a64590c5cbb42bc04232cb8a0c9.ctex"]
 
 [params]
 
