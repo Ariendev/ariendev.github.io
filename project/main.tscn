@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf7gf57arffgu"]
+
+[ext_resource type="Shader" path="res://scroll.gdshader" id="1_afdya"]
+[ext_resource type="Texture2D" uid="uid://dn3e3uargc3su" path="res://curtain-tex.png" id="2_4qnp2"]
+[ext_resource type="Texture2D" uid="uid://bnd1ud1h4hsll" path="res://noise.tres" id="2_w2kl7"]
+[ext_resource type="Shader" path="res://warp.gdshader" id="4_njgsj"]
+[ext_resource type="Texture2D" uid="uid://ceefb2bjp0adq" path="res://name.png" id="5_qypy2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qqna"]
+shader = ExtResource("1_afdya")
+shader_parameter/scrollDireciton = Vector2(0.1, 0.1)
+shader_parameter/textureRes = Vector2(480, 270)
+shader_parameter/uvSnap = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eudgi"]
+shader = ExtResource("1_afdya")
+shader_parameter/scrollDireciton = Vector2(-0.25, 0)
+shader_parameter/textureRes = Vector2(16, 32)
+shader_parameter/uvSnap = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0h4po"]
+frequency = 0.0708
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y7ibb"]
+width = 32
+height = 32
+generate_mipmaps = false
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_0h4po")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocxo0"]
+shader = ExtResource("4_njgsj")
+shader_parameter/warpAmount = 0.03
+shader_parameter/scrollDirection = Vector2(0.1, 0.1)
+shader_parameter/res = Vector2(189, 66)
+shader_parameter/noiseTex = SubResource("NoiseTexture2D_y7ibb")
+
+[node name="Main" type="Node2D"]
+
+[node name="NoiseBG" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1qqna")
+texture = ExtResource("2_w2kl7")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 270)
+
+[node name="Curtains" type="Node2D" parent="."]
+
+[node name="Curtain Top" type="Sprite2D" parent="Curtains"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_eudgi")
+texture = ExtResource("2_4qnp2")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 64)
+
+[node name="Curtain Bottom" type="Sprite2D" parent="Curtains"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_eudgi")
+position = Vector2(0, 206)
+texture = ExtResource("2_4qnp2")
+centered = false
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 64)
+
+[node name="Name" type="Sprite2D" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_ocxo0")
+position = Vector2(240, 135)
+texture = ExtResource("5_qypy2")
+region_enabled = true
+region_rect = Rect2(-12, -12, 189, 66)
